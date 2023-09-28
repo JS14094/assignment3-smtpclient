@@ -1,6 +1,4 @@
 from socket import *
-import base64
-import time
 
 
 def smtp_client(port=1025, mailserver='127.0.0.1'):
@@ -35,7 +33,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     clientSocket.send(mailFromCmd.encode())
     recv = clientSocket.recv(1024)
     recv = recv.decode()
-    print(recv)
+    #print(recv)
     # Fill in end
 
     # Send RCPT TO command and handle server response.
@@ -44,7 +42,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     clientSocket.send(rcptToCmd.encode())
     recv = clientSocket.recv(1024)
     recv = recv.decode()
-    print(recv)
+    #print(recv)
     # Fill in end
 
     # Send DATA command and handle server response.
@@ -53,7 +51,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     clientSocket.send(dataCmd.encode())
     recv = clientSocket.recv(1024)
     recv = recv.decode()
-    print(recv)
+    #print(recv)
     # Fill in end
 
     # Send message data.
@@ -63,7 +61,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     clientSocket.send(msg.encode())
     recv = clientSocket.recv(1024)
     recv = recv.decode()
-    print(recv)
+    #print(recv)
     # Fill in end
 
     # Message ends with a single period, send message end and handle server response.
@@ -71,7 +69,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     clientSocket.send(endmsg.encode())
     recv = clientSocket.recv(1024)
     recv = recv.decode()
-    print(recv)
+    #print(recv)
     # Fill in end
 
     # Send QUIT command and handle server response.
@@ -80,7 +78,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     clientSocket.send(quitCmd.encode())
     recv = clientSocket.recv(1024)
     recv = recv.decode()
-    print(recv)
+    #print(recv)
     clientSocket.close()
     # Fill in end
 
