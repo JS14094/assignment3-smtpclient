@@ -27,57 +27,57 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     if recv[:3] != '250':
         print('250 reply not received from server.')
 
-    # Send MAIL FROM command and handle server response.
-    # Fill in start
-    mailFromCmd = "MAIL FROM:<js14094@nyu.edu>\r\n"
-    clientSocket.send(mailFromCmd.encode())
-    recv = clientSocket.recv(1024)
-    recv = recv.decode()
-    #print(recv)
-    # Fill in end
-
-    # Send RCPT TO command and handle server response.
-    # Fill in start
-    rcptToCmd = "RCPT TO:<admin@nyu.edu>\r\n"
-    clientSocket.send(rcptToCmd.encode())
-    recv = clientSocket.recv(1024)
-    recv = recv.decode()
-    #print(recv)
-    # Fill in end
-
-    # Send DATA command and handle server response.
-    # Fill in start
-    dataCmd = "DATA\r\n"
-    clientSocket.send(dataCmd.encode())
-    recv = clientSocket.recv(1024)
-    recv = recv.decode()
-    #print(recv)
-    # Fill in end
-
-    # Send message data.
-    # Fill in start
-    subject = "Subject: SMTP CLIENT\r\n\r\n"
-    clientSocket.send(subject.encode())
-    clientSocket.send(msg.encode())
-    recv = clientSocket.recv(1024)
-    recv = recv.decode()
-    #print(recv)
-    # Fill in end
-
-    # Message ends with a single period, send message end and handle server response.
-    # Fill in start
-    clientSocket.send(endmsg.encode())
-    recv = clientSocket.recv(1024)
-    recv = recv.decode()
-    #print(recv)
-    # Fill in end
-
-    # Send QUIT command and handle server response.
-    # Fill in start
-    quitCmd = "QUIT\r\n"
-    clientSocket.send(quitCmd.encode())
-    recv = clientSocket.recv(1024)
-    recv = recv.decode()
+    # # Send MAIL FROM command and handle server response.
+    # # Fill in start
+    # mailFromCmd = "MAIL FROM:<js14094@nyu.edu>\r\n"
+    # clientSocket.send(mailFromCmd.encode())
+    # recv = clientSocket.recv(1024)
+    # recv = recv.decode()
+    # #print(recv)
+    # # Fill in end
+    #
+    # # Send RCPT TO command and handle server response.
+    # # Fill in start
+    # rcptToCmd = "RCPT TO:<admin@nyu.edu>\r\n"
+    # clientSocket.send(rcptToCmd.encode())
+    # recv = clientSocket.recv(1024)
+    # recv = recv.decode()
+    # #print(recv)
+    # # Fill in end
+    #
+    # # Send DATA command and handle server response.
+    # # Fill in start
+    # dataCmd = "DATA\r\n"
+    # clientSocket.send(dataCmd.encode())
+    # recv = clientSocket.recv(1024)
+    # recv = recv.decode()
+    # #print(recv)
+    # # Fill in end
+    #
+    # # Send message data.
+    # # Fill in start
+    # subject = "Subject: SMTP CLIENT\r\n\r\n"
+    # clientSocket.send(subject.encode())
+    # clientSocket.send(msg.encode())
+    # recv = clientSocket.recv(1024)
+    # recv = recv.decode()
+    # #print(recv)
+    # # Fill in end
+    #
+    # # Message ends with a single period, send message end and handle server response.
+    # # Fill in start
+    # clientSocket.send(endmsg.encode())
+    # recv = clientSocket.recv(1024)
+    # recv = recv.decode()
+    # #print(recv)
+    # # Fill in end
+    #
+    # # Send QUIT command and handle server response.
+    # # Fill in start
+    # quitCmd = "QUIT\r\n"
+    # clientSocket.send(quitCmd.encode())
+    # recv = clientSocket.recv(1024)
+    # recv = recv.decode()
     #print(recv)
     clientSocket.close()
     # Fill in end
